@@ -3,7 +3,7 @@ let userAge: number = 0;
 let isLogin: boolean = true;
 let userNames: string[] = [];
 userNames.push(userName);
-let person = {};
+let person: object;
 person = {
   firstName: "Dupont",
   age: 20,

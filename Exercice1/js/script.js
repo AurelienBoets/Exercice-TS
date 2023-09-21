@@ -4,7 +4,7 @@ let userAge = 0;
 let isLogin = true;
 let userNames = [];
 userNames.push(userName);
-let person = {};
+let person;
 person = {
     firstName: "Dupont",
     age: 20,
