@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <main>
+      <div>
+        <h1>Contacts</h1>
+        <hr />
+        <ul id="contact-list"></ul>
+        <hr />
+        <button id="btnAdd">Add</button>
+      </div>
+      <div>
+        <h1>Détails</h1>
+        <hr />
+        <form>
+          <label for="firstName">Firstname</label>
+          <input type="text" name="firstName" id="firstName" disabled />
+          <label for="lastName">Lastname</label>
+          <input type="text" name="lastName" id="lastName" disabled />
+          <label for="birthDate">Date of birth</label>
+          <input type="date" name="birthDate" id="birthDate" disabled />
+          <img src="./asset/unknown.jpg" alt="avatar" id="avatarImg" />
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" disabled />
+          <label for="phone">Phone number</label>
+          <input type="text" name="phone" id="phone" disabled />
+          <label for="avatar" class="hide">Avatar</label>
+          <input type="text" name="avatar" id="avatar" class="hide" />
+          <hr />
+          <button id="btnSubmit">Edit</button>
+          <button id="btnDelete">Delete</button>
+          <button type="submit" class="hide" id="btnSubmit">Valider</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
