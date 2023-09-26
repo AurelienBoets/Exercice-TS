@@ -62,6 +62,7 @@ btnAdd.addEventListener("click", () => {
     labelAvatar.classList.remove("hide");
     inptAvatar.classList.remove("hide");
     btnSubmit.classList.remove("hide");
+    currentPerson = -1;
     inpt.forEach((element) => {
         element.disabled = false;
         element.value = "";
