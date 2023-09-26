@@ -76,7 +76,12 @@ btnSubmit.addEventListener("click", (e) => {
         }
     });
     let date = new Date(inptBirthDate.value);
-    addPerson(inptFirstName.value, inptLastName.value, date, inptEmail.value, inptPhone.value);
+    if (inptAvatar.value == "") {
+        addPerson(inptFirstName.value, inptLastName.value, date, inptEmail.value, inptPhone.value);
+    }
+    else {
+        addPerson(inptFirstName.value, inptLastName.value, date, inptEmail.value, inptPhone.value, inptAvatar.value);
+    }
     if (isEdit == true) {
         deletePerson(currentPerson);
         let parent = contactList;
