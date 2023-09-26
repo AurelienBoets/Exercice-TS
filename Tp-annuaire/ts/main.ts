@@ -15,7 +15,7 @@ const inptAvatar = document.getElementById("avatar") as HTMLInputElement;
 const inptEmail = document.getElementById("email") as HTMLInputElement;
 const inptPhone = document.getElementById("phone") as HTMLInputElement;
 const imgAvatar = document.getElementById("avatarImg") as HTMLImageElement;
-let contactList = document.getElementById("contact-list");
+let contactList = document.getElementById("contact-list") as HTMLUListElement;
 let personList: Person[] = [];
 let currentPerson: number;
 let isEdit = false;
