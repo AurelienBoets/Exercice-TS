@@ -13,7 +13,7 @@ export default class Person {
     birthDate: Date,
     email: string,
     phone: string,
-    avatar: string = "../asset/unknown.jpg"
+    avatar: string = "./asset/unknown.jpg"
   ) {
     this.id = Person.count++;
     this.firstName = firstName;
@@ -74,8 +74,5 @@ export default class Person {
 
   public get getId(): number {
     return this.id;
-  }
-  private edit(): void {
-    console.log("slt");
   }
 }

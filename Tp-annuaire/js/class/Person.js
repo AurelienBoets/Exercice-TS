@@ -1,5 +1,5 @@
 class Person {
-    constructor(firstName, lastName, birthDate, email, phone, avatar = "../asset/unknown.jpg") {
+    constructor(firstName, lastName, birthDate, email, phone, avatar = "./asset/unknown.jpg") {
         this.id = Person.count++;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -46,9 +46,6 @@ class Person {
     }
     get getId() {
         return this.id;
-    }
-    edit() {
-        console.log("slt");
     }
 }
 Person.count = 1;
