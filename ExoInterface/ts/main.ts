@@ -13,7 +13,7 @@ interface Admin extends Person {
 
 type Personne = Admin | User;
 
-let personneList: Personne[];
+let personneList: Personne[] = [];
 
 let obj: Personne = {
   nom: "Toto Dupont",
@@ -38,6 +38,7 @@ obj = {
   age: 64,
   role: "Gérant",
 };
+personneList.push(obj);
 
 personneList.forEach((personne) => {
   console.log(`nom: ${personne.nom} age:${personne.age}`);

@@ -1,4 +1,4 @@
-let personneList;
+let personneList = [];
 let obj = {
     nom: "Toto Dupont",
     age: 35,
@@ -22,6 +22,7 @@ obj = {
     age: 64,
     role: "Gérant",
 };
+personneList.push(obj);
 personneList.forEach((personne) => {
     console.log(`nom: ${personne.nom} age:${personne.age}`);
 });
