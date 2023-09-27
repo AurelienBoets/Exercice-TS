@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="js/main.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div id="filter">
+        <h2>Filter</h2>
+        <hr>
+        <label for="preparation">Preparation time: <span></span></label>
+        <input
+          type="range"
+          name="preparation"
+          id="preparationInpt"
+          min="1"
+          max="15"
+          step="1"
+          value="15"
+        />
+        <label for="cooking">Cooking time: <span></span></label>
+        <input
+          type="range"
+          name="cooking"
+          id="cookingInpt"
+          min="1"
+          max="30"
+          step="1"
+          value="30"
+        />
+        <label for="name"></label>
+        <input type="text" name="name" id="nameInpt" />
+        <label for="ingredients">Ingredients</label>
+        <select name="ingredients" id="ingredientsInpt" multiple class="form-control"></select>
+        </p>
+      </div>
+      <div id="recipe">
+        <h2>Recipes</h2>
+        <hr>
+      </div>
+    </main>
+  </body>
+</html>
