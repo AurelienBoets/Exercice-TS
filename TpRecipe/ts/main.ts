@@ -1,5 +1,6 @@
 import { recipes } from "./data.js";
 import RecipeInterface from "./RecipeInterface.js";
+import Filter from "./Filter.js";
 
 const preparationInpt = document.getElementById(
   "preparationInpt"
@@ -18,6 +19,12 @@ const preparationLabel = document.querySelector(
 const recipeContainer = document.getElementById("recipe");
 let ingredientsList: string[] = [];
 const recipeList: RecipeInterface[] = [];
+const filter = new Filter(
+  preparationInpt.value,
+  cookingInpt.value,
+  nameInpt.value,
+  ingredientsInpt.value
+);
 
 let i = 0;
 for (const element in recipes) {
@@ -96,6 +103,54 @@ function init(): void {
     });
     recipeContainer.appendChild(div);
     recipeContainer.appendChild(modal);
+  });
+}
+
+cookingInpt.addEventListener("input", () => {
+  cookingLabel.textContent = cookingInpt.value;
+  filter.setCooking = cookingInpt.value;
+  filtre(filter);
+});
+
+preparationInpt.addEventListener("input", () => {
+  preparationLabel.textContent = preparationInpt.value;
+  filter.setPreparation = preparationInpt.value;
+  filtre(filter);
+});
+
+nameInpt.addEventListener("input", () => {
+  filter.setName = nameInpt.value;
+  filtre(filter);
+});
+
+ingredientsInpt.addEventListener("input", () => {
+  filter.setIngredient = ingredientsInpt.value;
+  filtre(filter);
+});
+
+function filtre(filter: Filter): void {
+  recipeList.forEach((recipe) => {
+    let div = document.querySelector(
+      `[data-bs-target="#modal${recipe.id}"]`
+    ) as HTMLDivElement;
+    div.classList.add("d-none");
+    let preparation = recipe.prepTime[0] + recipe.prepTime[1];
+    let cooking = recipe.cookTime[0] + recipe.cookTime[1];
+    if (recipe.name.includes(filter.getName) || filter.getName == "") {
+      if (parseInt(cooking) <= parseInt(filter.getCooking)) {
+        if (parseInt(preparation) <= parseInt(filter.getPreparation)) {
+          if (filter.getingredient == "") {
+            div.classList.remove("d-none");
+          } else if (
+            recipe.ingredients.find(
+              (ingredient) => ingredient.name == filter.getingredient
+            )
+          ) {
+            div.classList.remove("d-none");
+          }
+        }
+      }
+    }
   });
 }
 
