@@ -105,7 +105,8 @@ function filtre(filter) {
         div.classList.add("d-none");
         let preparation = recipe.prepTime[0] + recipe.prepTime[1];
         let cooking = recipe.cookTime[0] + recipe.cookTime[1];
-        if (recipe.name.includes(filter.getName) || filter.getName == "") {
+        if (recipe.name.toLowerCase().includes(filter.getName.toLowerCase()) ||
+            filter.getName == "") {
             if (parseInt(cooking) <= parseInt(filter.getCooking)) {
                 if (parseInt(preparation) <= parseInt(filter.getPreparation)) {
                     if (filter.getingredient == "") {
