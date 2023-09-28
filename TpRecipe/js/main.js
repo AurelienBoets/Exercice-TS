@@ -26,7 +26,7 @@ function init() {
         div.innerHTML = `<h2 class="text-center">${recipe.name}</h2><hr><div class="text-center"><img src=./img/chef-hat.svg height=50px width=auto/> <span>${recipe.prepTime}</span>
                     <img src="./img/fire.svg" height=50px width=auto /> <span>${recipe.cookTime}</span></div>`;
         let modal = document.createElement("div");
-        modal.classList.add("modal", "fade");
+        modal.classList.add("modal", "fade", "text-dark");
         modal.setAttribute("id", "modal" + recipe.id);
         modal.innerHTML = `<div class=modal-dialog>
     <div class=modal-content>
